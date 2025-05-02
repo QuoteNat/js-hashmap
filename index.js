@@ -22,3 +22,4 @@ console.log(test.remove("kite"));
 console.log(test.has("kite"));
 console.log(test.length());
 console.log(test.keys());
+console.log(test.values());

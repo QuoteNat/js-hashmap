@@ -121,4 +121,14 @@ export class HashMap {
     }
     return keyArray;
   }
+
+  values() {
+    let valueArray = [];
+    for (const bucket of this.#buckets) {
+      for (const node of bucket.makeListIterator()) {
+        valueArray.push(node.value);
+      }
+    }
+    return valueArray;
+  }
 }
