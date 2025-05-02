@@ -131,4 +131,14 @@ export class HashMap {
     }
     return valueArray;
   }
+
+  entries() {
+    let entries = [];
+    for (const bucket of this.#buckets) {
+      for (const node of bucket.makeListIterator()) {
+        entries.push([node.key, node.value]);
+      }
+    }
+    return entries;
+  }
 }
