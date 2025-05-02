@@ -65,4 +65,14 @@ export class HashMap {
     }
     return string;
   }
+
+  get(key) {
+    let hashValue = hash(key, this.#capacity);
+    for (const node of this.#buckets[hashValue].makeListIterator()) {
+      if (node.key == key) {
+        return node.value;
+      }
+    }
+    return null;
+  }
 }
