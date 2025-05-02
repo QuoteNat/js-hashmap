@@ -57,4 +57,12 @@ export class HashMap {
     let hashValue = hash(key, this.#capacity);
     this.#buckets[hashValue].append(new Pair(key, value));
   }
+
+  toString() {
+    let string = "";
+    for (const bucket of this.#buckets) {
+      string += bucket.toString() + "\n";
+    }
+    return string;
+  }
 }
