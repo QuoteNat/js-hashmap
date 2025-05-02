@@ -92,10 +92,15 @@ export class HashMap {
     for (const node of this.#buckets[hashValue].makeListIterator()) {
       if (node.key == key) {
         this.#buckets[hashValue].removeAt(index);
+        this.#size -= 1;
         return true;
       }
       index += 1;
     }
     return false;
+  }
+
+  length() {
+    return this.#size;
   }
 }
