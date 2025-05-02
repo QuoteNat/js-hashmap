@@ -85,4 +85,17 @@ export class HashMap {
     }
     return false;
   }
+
+  remove(key) {
+    let hashValue = hash(key, this.#capacity);
+    let index = 0;
+    for (const node of this.#buckets[hashValue].makeListIterator()) {
+      if (node.key == key) {
+        this.#buckets[hashValue].removeAt(index);
+        return true;
+      }
+      index += 1;
+    }
+    return false;
+  }
 }
