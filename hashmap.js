@@ -103,4 +103,12 @@ export class HashMap {
   length() {
     return this.#size;
   }
+
+  clear() {
+    this.#buckets = [];
+    this.#size = 0;
+    for (let i = 0; i < this.#capacity; i++) {
+      this.#buckets.push(new List());
+    }
+  }
 }

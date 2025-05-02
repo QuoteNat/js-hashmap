@@ -21,3 +21,6 @@ console.log(test.has("woieurhijwqoij"));
 console.log(test.remove("kite"));
 console.log(test.has("kite"));
 console.log(test.length());
+test.clear();
+console.log(test.length());
+console.log(test.toString());
