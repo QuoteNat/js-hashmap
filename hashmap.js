@@ -111,4 +111,14 @@ export class HashMap {
       this.#buckets.push(new List());
     }
   }
+
+  keys() {
+    let keyArray = [];
+    for (const bucket of this.#buckets) {
+      for (const node of bucket.makeListIterator()) {
+        keyArray.push(node.key);
+      }
+    }
+    return keyArray;
+  }
 }
