@@ -16,3 +16,5 @@ test.set("kite", "pink");
 test.set("lion", "golden");
 console.log(test.toString());
 console.log(test.get("kite"));
+console.log(test.has("kite"));
+console.log(test.has("woieurhijwqoij"));
